@@ -15,6 +15,9 @@ Session manager/remote dbus?
 TODO:
 * Investigate NSM for multi-server management.
 * Investigate mapping audio hw id to usb port id, for stable connections
+  * ATTRS searches given device and parent tree
+  * ATTRS{devnum} and ATTRS{devpath} are candidates -- test stability
+  * ATTR{id} can be used on root sound device to set name -- see http://www.alsa-project.org/main/index.php/Changing_card_IDs_with_udev
 * Jack/NSM systemd configurations. (zita-a2j through systemd or NSM?)
 * Noise / feedback suppression.
 * Audio pathing / mixing.

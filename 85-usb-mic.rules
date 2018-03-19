@@ -1,0 +1,8 @@
+# Stable alsa device IDs based on usb bus path
+# USB paths can take form of "1" or "1.2", need to translate . to - to get alsa to accept
+SUBSYSTEM!="sound", GOTO="usb_mic_end"
+ACTION!="add", GOTO="usb_mic_end"
+
+KERNEL=="card*", SUBSYSTEMS=="usb", ATTRS{devpath}=="?*", RUN+="/bin/sh -c 'echo -n \"mic-$attr{devpath}\" | tr . - > /sys$devpath/id'"
+
+LABEL="usb_mic_end"
