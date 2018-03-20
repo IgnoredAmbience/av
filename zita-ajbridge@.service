@@ -1,0 +1,14 @@
+[Unit]
+Description=zita-ajbridge on %I
+Requires=jackd.service
+After=jackd.service
+BindsTo=%i.device
+
+[Service]
+LimitRTPRIO=infinity
+LimitMEMLOCK=infinity
+User=thomas
+ExecStart=/bin/sh -c "/usr/bin/zita-a2j -d hw:$(cat /%I/number) -j $(cat /%I/id) -c 1 -p 256 -Q 16"
+
+[Install]
+WantedBy=multi-user.target

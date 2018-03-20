@@ -3,6 +3,6 @@
 SUBSYSTEM!="sound", GOTO="usb_mic_end"
 ACTION!="add", GOTO="usb_mic_end"
 
-KERNEL=="card*", SUBSYSTEMS=="usb", ATTRS{devpath}=="?*", RUN+="/bin/sh -c 'echo -n \"mic-$attr{devpath}\" | tr . - > /sys$devpath/id'"
+KERNEL=="card*", SUBSYSTEMS=="usb", ATTRS{devpath}=="?*", ENV{alsa_id}="mic_$attr{devpath}", RUN+="/bin/sh -c 'echo -n \"$env{alsa_id}\" | tr . _ > /sys$devpath/id'", TAG+="systemd", ENV{SYSTEMD_WANTS}+="zita-ajbridge@.service"
 
 LABEL="usb_mic_end"

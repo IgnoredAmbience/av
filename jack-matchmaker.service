@@ -1,0 +1,10 @@
+[Unit]
+Description=jack-matchmaker
+Requires=jackd.service
+
+[Service]
+User=thomas
+ExecStart=/usr/bin/jack-matchmaker -p /etc/jack-matchmaker.conf
+
+[Install]
+WantedBy=multi-user.target

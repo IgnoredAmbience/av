@@ -32,4 +32,8 @@ chown -R thomas /home/thomas/.ssh
 mkdir /root/.ssh
 cp authorized_keys /root/.ssh
 
+# Sound Config
 cp 85-usb-mic.rules /etc/udev/rules.d/
+cp {jackd-slave,jack-matchmaker,zita-ajbridge@}.service /etc/systemd/system
+cp jack-matchmaker.conf /etc/
+systemctl enable {jackd-slave,jack-matchmaker,zita-ajbridge@}.service

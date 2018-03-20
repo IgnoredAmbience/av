@@ -1,0 +1,13 @@
+[Unit]
+Description=JACK [Slave mode]
+After=sound.target
+
+[Service]
+LimitRTPRIO=infinity
+LimitMEMLOCK=infinity
+User=thomas
+ExecStart=/usr/bin/jackd -R -d net -C 0 -P 4
+
+[Install]
+Alias=jackd.service
+WantedBy=multi-user.target

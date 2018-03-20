@@ -1,0 +1,14 @@
+[Unit]
+Description=JACK
+After=sound.target
+
+[Service]
+LimitRTPRIO=infinity
+LimitMEMLOCK=infinity
+Environment="JACK_NO_AUDIO_RESERVATION=1"
+User=thomas
+ExecStart=/usr/bin/jackd -R -d alsa -p 512
+
+[Install]
+Alias=jackd.service
+WantedBy=multi-user.target
