@@ -6,7 +6,7 @@ After=sound.target
 LimitRTPRIO=infinity
 LimitMEMLOCK=infinity
 User=thomas
-ExecStart=/usr/bin/jackd -R -d net -C 0 -P 4
+ExecStart=/usr/bin/jackd -R --silent -d net -C 0 -P 4
 
 [Install]
 Alias=jackd.service

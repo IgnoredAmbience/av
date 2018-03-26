@@ -10,12 +10,7 @@ Server netmanager must be loaded after slaves are online.
 
 Random network dropout experienced. Needed to restart master to get slave to reconnect.
 Automatic rewiring of slave inputs and outputs would be helpful to prevent too much human overhead.
-Session manager/remote dbus?
 
 TODO:
 * Noise / feedback suppression.
-* Audio pathing / mixing.
-* Video pathing.
-* Windows support(!) -- 3.5mm audio in is an option.
-* Prepare a bootable Arch Linux USB stick.
 
